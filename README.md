@@ -1,3 +1,5 @@
+<img src="https://consensas-aws.s3.amazonaws.com/icons/passports-github.png" align="right" />
+
 # information-passport-website
 Demo Website for Information Passport (Apache / NGINX)
 
@@ -16,3 +18,9 @@ provides digital proof of a Vaccination.
 A **Test Record Passport** is an Information Passport that provides
 digital proof a some test having been performed.
 
+## Installation
+
+* clone / download this project
+* use the files in `cfg` to set up your webserver
+* edit `validate/main.js` and change the URL `DID_EXAMPLE` points to 
+  to the domain / url you are using. Sorry, this is horrible.
