@@ -1,92 +1,104 @@
 {
   "@context": {
     "schema:": "https://schema.org",
-    "w3did": "https://www.w3.org/ns/did/v1",
-    "security": "https://w3id.org/security#"
+    "security": "https://w3id.org/security#",
+    "vc": "https://www.w3.org/2018/credentials/v1"
   },
-  "@type": "schema:MedicalRecord-Vaccination",
-  "schema:identifier": null,
-  "schema:name": "Janet Jones - Moderna COVID-19 Vaccine",
-  "schema:patient": {
+  "@type": [
+    "vc:VerifiableCredential",
+    "vc:HealthCredential"
+  ],
+  "vc:issuer": "https://passport.consensas.com",
+  "vc:issuanceDate": "2021-01-29T12:30:25.133Z",
+  "vc:credentialSubject": {
     "@context": {
-      "schema:": "https://schema.org"
+      "schema:": "https://schema.org",
+      "w3did": "https://www.w3.org/ns/did/v1"
     },
-    "@type": "schema:Patient",
-    "schema:additionalName": null,
-    "schema:birthDate": "••••-••-19",
-    "schema:familyName": "Jones",
-    "schema:givenName": "Janet",
-    "schema:name": "Janet Jones"
-  },
-  "schema:permit-healthCard": {
-    "@context": {
-      "schema:": "https://schema.org"
+    "@type": "schema:MedicalRecord-Vaccination",
+    "schema:identifier": null,
+    "schema:name": "Janet Jones - Moderna COVID-19 Vaccine",
+    "schema:patient": {
+      "@context": {
+        "schema:": "https://schema.org"
+      },
+      "@type": "schema:Patient",
+      "schema:additionalName": null,
+      "schema:birthDate": "••••-••-19",
+      "schema:familyName": "Jones",
+      "schema:givenName": "Janet",
+      "schema:name": "Janet Jones"
     },
-    "@type": "schema:Permit-HealthCard",
-    "schema:identifier-healthCard": "••••••••••••2308",
-    "schema:issuedBy": "CA-BC",
-    "schema:validUntil": "2022-03"
-  },
-  "schema:primaryPrevention": {
-    "@context": {
-      "schema:": "https://schema.org"
+    "schema:permit-healthCard": {
+      "@context": {
+        "schema:": "https://schema.org"
+      },
+      "@type": "schema:Permit-HealthCard",
+      "schema:identifier-healthCard": "••••••••••••2308",
+      "schema:issuedBy": "CA-BC",
+      "schema:validUntil": "2022-03"
     },
-    "@type": "schema:MedicalTherapy-Vaccination",
-    "schema:drug": {
-      "@type": "schema:Drug",
-      "schema:code": {
-        "@type": "schema:MedicalCode",
-        "schema:codeValue": "MVX-MOD.CVX-207",
-        "schema:codingSystem": "CDC-MVX.CVX"
+    "schema:primaryPrevention": {
+      "@context": {
+        "schema:": "https://schema.org"
+      },
+      "@type": "schema:MedicalTherapy-Vaccination",
+      "schema:drug": {
+        "@type": "schema:Drug",
+        "schema:code": {
+          "@type": "schema:MedicalCode",
+          "schema:codeValue": "MVX-MOD.CVX-207",
+          "schema:codingSystem": "CDC-MVX.CVX"
+        },
+        "schema:identifier": "MVX-MOD.CVX-207",
+        "schema:identifier-cvx": "CVX-207",
+        "schema:manufacturer": {
+          "@type": "schema:Organization-CDC-MVX",
+          "schema:identifier": "MVX-MOD",
+          "schema:identifier-mvx": "MVX-MOD",
+          "schema:name": "Moderna US, Inc."
+        },
+        "schema:name": "Moderna COVID-19 Vaccine"
+      },
+      "schema:healthCondition": {
+        "@type": "schema:MedicalCondition",
+        "schema:code": {
+          "@type": "schema:MedicalCode",
+          "schema:codeValue": "U07",
+          "schema:codingSystem": "ICD-10"
+        },
+        "schema:identifier": "U07",
+        "schema:name": "COVID-19"
       },
       "schema:identifier": "MVX-MOD.CVX-207",
       "schema:identifier-cvx": "CVX-207",
-      "schema:manufacturer": {
-        "@type": "schema:Organization-CDC-MVX",
-        "schema:identifier": "MVX-MOD",
-        "schema:identifier-mvx": "MVX-MOD",
-        "schema:name": "Moderna US, Inc."
-      },
+      "schema:identifier-mvx": "MVX-MOD",
       "schema:name": "Moderna COVID-19 Vaccine"
     },
-    "schema:healthCondition": {
-      "@type": "schema:MedicalCondition",
-      "schema:code": {
-        "@type": "schema:MedicalCode",
-        "schema:codeValue": "U07",
-        "schema:codingSystem": "ICD-10"
+    "schema:location": {
+      "@context": {
+        "schema:": "https://schema.org"
       },
-      "schema:identifier": "U07",
-      "schema:name": "COVID-19"
+      "@type": "schema:Hospital",
+      "schema:address": {
+        "@type": "schema:PostalAddress",
+        "schema:addressCountry": "CA",
+        "schema:addressRegion": "BC",
+        "schema:addressLocality": "Adamston",
+        "schema:postalCode": null,
+        "schema:streetAddress": null
+      },
+      "schema:name": "General Clinic"
     },
-    "schema:identifier": "MVX-MOD.CVX-207",
-    "schema:identifier-cvx": "CVX-207",
-    "schema:identifier-mvx": "MVX-MOD",
-    "schema:name": "Moderna COVID-19 Vaccine"
+    "schema:treatmentDate": "2021-01-01",
+    "w3did:id": "did:example:W5QY3AZ3LP"
   },
-  "schema:location": {
-    "@context": {
-      "schema:": "https://schema.org"
-    },
-    "@type": "schema:Hospital",
-    "schema:address": {
-      "@type": "schema:PostalAddress",
-      "schema:addressCountry": "CA",
-      "schema:addressRegion": "BC",
-      "schema:addressLocality": "Adamston",
-      "schema:postalCode": null,
-      "schema:streetAddress": null
-    },
-    "schema:name": "General Clinic"
-  },
-  "schema:treatmentDate": "2021-01-01",
-  "w3did:id": "did:example:W5QY3AZ3LP",
   "security:proof": {
     "security:type": "https://models.consensas.com/security#ConsensasRSA2021",
     "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-01-25T10:18:03.398Z",
-    "security:nonce": "22832198908780676",
+    "security:created": "2021-01-29T12:30:25.135Z",
+    "security:nonce": "4981108673606107",
     "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..R3juhFMr-nDT6eGDJ1kMcpHHA5yRw2Oz7-4NAfBIDdf0EdAnUWJ22v2JoNZ83fVELeDuqa-9GHGNpHybSAPEXebweSji0vunVqSWoQCWOrl3HwHTs7GohAXwayGtepLSQzPk8oVLX2n6cUpPXqU9OiLxHVIPSqZrWRy4eBHAgENSARdpRHWCgrwkpkCh67BiUs3Xb8W_XAqBbxOG20fIelyzIc4vyyemv2mTiet8kxjhyD29tz_OIu0XsZfxWE4hRqoX7Qr4fJe5dkt8z05a1nnXun6_D3zVaUfjjcSBsdhiuywUIXr-_rz3W9RC-dOJyecbCZyy-6nww_IrWeI-gw"
+    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..grCQ4cVd84TxPsa0O2xVHUW__itwNO6NsxXjyA98OrbS2WNbUgIThJelsAilEfzF6Rqix6zRLatfH4KXo-VOtXWK-dMUKCy0h05c3KxDH10yvUAagJRlrQD_XZEl5dq5bOC4KJk6KbebvYlgtlN_FCqwdal60KpdfOukyZcc23MT0V1dERI7jwkZ0-xaZmxmck0aXg_r2LXPM-AcYqd6DTa3d2Gnk5k93zuS6bV9hMQ3LCquXy0m0J5M-12a5GNE8ZN-6Owdc1U2hq7M9Xkjzr86FAj5-68ztXIAjCOJhJQ18-tDMnZh9I0dQDkaqnPnbxte--brZ1AgfK0NbMsBZg"
   }
 }

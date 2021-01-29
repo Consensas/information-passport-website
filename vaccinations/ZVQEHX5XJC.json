@@ -1,92 +1,104 @@
 {
   "@context": {
     "schema:": "https://schema.org",
-    "w3did": "https://www.w3.org/ns/did/v1",
-    "security": "https://w3id.org/security#"
+    "security": "https://w3id.org/security#",
+    "vc": "https://www.w3.org/2018/credentials/v1"
   },
-  "@type": "schema:MedicalRecord-Vaccination",
-  "schema:identifier": null,
-  "schema:name": "Juan Mcclure - Moderna COVID-19 Vaccine",
-  "schema:patient": {
+  "@type": [
+    "vc:VerifiableCredential",
+    "vc:HealthCredential"
+  ],
+  "vc:issuer": "https://passport.consensas.com",
+  "vc:issuanceDate": "2021-01-29T12:30:26.074Z",
+  "vc:credentialSubject": {
     "@context": {
-      "schema:": "https://schema.org"
+      "schema:": "https://schema.org",
+      "w3did": "https://www.w3.org/ns/did/v1"
     },
-    "@type": "schema:Patient",
-    "schema:additionalName": null,
-    "schema:birthDate": "••••-••-27",
-    "schema:familyName": "Mcclure",
-    "schema:givenName": "Juan",
-    "schema:name": "Juan Mcclure"
-  },
-  "schema:permit-healthCard": {
-    "@context": {
-      "schema:": "https://schema.org"
+    "@type": "schema:MedicalRecord-Vaccination",
+    "schema:identifier": null,
+    "schema:name": "Juan Mcclure - Moderna COVID-19 Vaccine",
+    "schema:patient": {
+      "@context": {
+        "schema:": "https://schema.org"
+      },
+      "@type": "schema:Patient",
+      "schema:additionalName": null,
+      "schema:birthDate": "••••-••-27",
+      "schema:familyName": "Mcclure",
+      "schema:givenName": "Juan",
+      "schema:name": "Juan Mcclure"
     },
-    "@type": "schema:Permit-HealthCard",
-    "schema:identifier-healthCard": "••••••••7257",
-    "schema:issuedBy": "CA-BC",
-    "schema:validUntil": "2023-03"
-  },
-  "schema:primaryPrevention": {
-    "@context": {
-      "schema:": "https://schema.org"
+    "schema:permit-healthCard": {
+      "@context": {
+        "schema:": "https://schema.org"
+      },
+      "@type": "schema:Permit-HealthCard",
+      "schema:identifier-healthCard": "••••••••7257",
+      "schema:issuedBy": "CA-BC",
+      "schema:validUntil": "2023-03"
     },
-    "@type": "schema:MedicalTherapy-Vaccination",
-    "schema:drug": {
-      "@type": "schema:Drug",
-      "schema:code": {
-        "@type": "schema:MedicalCode",
-        "schema:codeValue": "MVX-MOD.CVX-207",
-        "schema:codingSystem": "CDC-MVX.CVX"
+    "schema:primaryPrevention": {
+      "@context": {
+        "schema:": "https://schema.org"
+      },
+      "@type": "schema:MedicalTherapy-Vaccination",
+      "schema:drug": {
+        "@type": "schema:Drug",
+        "schema:code": {
+          "@type": "schema:MedicalCode",
+          "schema:codeValue": "MVX-MOD.CVX-207",
+          "schema:codingSystem": "CDC-MVX.CVX"
+        },
+        "schema:identifier": "MVX-MOD.CVX-207",
+        "schema:identifier-cvx": "CVX-207",
+        "schema:manufacturer": {
+          "@type": "schema:Organization-CDC-MVX",
+          "schema:identifier": "MVX-MOD",
+          "schema:identifier-mvx": "MVX-MOD",
+          "schema:name": "Moderna US, Inc."
+        },
+        "schema:name": "Moderna COVID-19 Vaccine"
+      },
+      "schema:healthCondition": {
+        "@type": "schema:MedicalCondition",
+        "schema:code": {
+          "@type": "schema:MedicalCode",
+          "schema:codeValue": "U07",
+          "schema:codingSystem": "ICD-10"
+        },
+        "schema:identifier": "U07",
+        "schema:name": "COVID-19"
       },
       "schema:identifier": "MVX-MOD.CVX-207",
       "schema:identifier-cvx": "CVX-207",
-      "schema:manufacturer": {
-        "@type": "schema:Organization-CDC-MVX",
-        "schema:identifier": "MVX-MOD",
-        "schema:identifier-mvx": "MVX-MOD",
-        "schema:name": "Moderna US, Inc."
-      },
+      "schema:identifier-mvx": "MVX-MOD",
       "schema:name": "Moderna COVID-19 Vaccine"
     },
-    "schema:healthCondition": {
-      "@type": "schema:MedicalCondition",
-      "schema:code": {
-        "@type": "schema:MedicalCode",
-        "schema:codeValue": "U07",
-        "schema:codingSystem": "ICD-10"
+    "schema:location": {
+      "@context": {
+        "schema:": "https://schema.org"
       },
-      "schema:identifier": "U07",
-      "schema:name": "COVID-19"
+      "@type": "schema:Hospital",
+      "schema:address": {
+        "@type": "schema:PostalAddress",
+        "schema:addressCountry": "CA",
+        "schema:addressRegion": "BC",
+        "schema:addressLocality": "Port Coleland",
+        "schema:postalCode": null,
+        "schema:streetAddress": null
+      },
+      "schema:name": "Dr. Elric Clinc"
     },
-    "schema:identifier": "MVX-MOD.CVX-207",
-    "schema:identifier-cvx": "CVX-207",
-    "schema:identifier-mvx": "MVX-MOD",
-    "schema:name": "Moderna COVID-19 Vaccine"
+    "schema:treatmentDate": "2021-01-01",
+    "w3did:id": "did:example:ZVQEHX5XJC"
   },
-  "schema:location": {
-    "@context": {
-      "schema:": "https://schema.org"
-    },
-    "@type": "schema:Hospital",
-    "schema:address": {
-      "@type": "schema:PostalAddress",
-      "schema:addressCountry": "CA",
-      "schema:addressRegion": "BC",
-      "schema:addressLocality": "Port Coleland",
-      "schema:postalCode": null,
-      "schema:streetAddress": null
-    },
-    "schema:name": "Dr. Elric Clinc"
-  },
-  "schema:treatmentDate": "2021-01-01",
-  "w3did:id": "did:example:ZVQEHX5XJC",
   "security:proof": {
     "security:type": "https://models.consensas.com/security#ConsensasRSA2021",
     "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-01-25T10:18:04.159Z",
-    "security:nonce": "6198850804103246",
+    "security:created": "2021-01-29T12:30:26.076Z",
+    "security:nonce": "8862137450997836",
     "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..U5bu0oowRMP4ZUNDMvs4RpeuRqcQ0nHFz8FGpR5PhZF7kjSclmjQRzKCmXizH67nU5gOdIQbuLA56ZpNTCdDZVsLSV1tXC64PO7VlQxe88e36YCsYpixxxENWMaBUc9SuM6yIz60PngbDmzdoI7lJeZRYjAbyNMVxMOQijYHzF8qWmfAybYfmQplho5mbSTVRfrdRnaO-qv2AURfn2P_Fm5XcqgQTr2KeWXvOGOsGNZP6wxRgmNX5E3ciFWt0JBRIeIc7PPELFLzE5ElN1tV8wJIlfUuKOB8cRJk-Gnt4XS0wYWb1eYdbfoZWPbXuBKCVG77-Nw0rGc3u3-OiWfd5A"
+    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..N8qlMjKk6d2RtpmaW0glnlNPGb-bI5phA2W7s293GKcVJrXeWIFHBWp3phfgXoL1sY72ldGpdGAYYxwBKAnMdLjo50qExIw3RiXChNNlnK6p9kvzmDgLhBDBrCJE0MiZPaEllIyRV8NXdAsf1autluQFuyX_rGCCykrJQNd2QAJEqolQWGWyIYiFa4aVF8j5L9rDgTScC749jQkNcwPGXK3P2Gqo-PO7AKX4pqkhy636vHh-_pDbFe7M2VQsrMQY6GW5vJLRvARvmnpql4PMIifyg9k3fkK3z2_8yNJmc4PAp84-cI4DGS_pWPpUpEr15llbfMgcf1Ec3DXSNYTVfg"
   }
 }
