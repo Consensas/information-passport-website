@@ -26,14 +26,13 @@ import _ from 'lodash';
 import ip from "information-passport";
 import fetch from "node-fetch";
 import $ from "jquery";
+// import Html5QrcodeScanner from "../qr/html5-qrcode-scanner.js";
 
 const DID_EXAMPLE = "https://passport.consensas.com/"
 const didd = {
     "did:cns:": "https://consensas.world/",
     "did:example:": DID_EXAMPLE,
 }
-
-// import Html5QrcodeScanner from "../qr/html5-qrcode-scanner.js";
 
 const mapping = {
     'id': "ID",
@@ -123,6 +122,10 @@ const validate = async url => {
 }
 
 const _build_scanner = function() {
+    if (!window.Html5QrcodeScanner) {
+        return
+    }
+
     const scanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
     scanner.render(async function(url) {
         /*
@@ -141,13 +144,41 @@ const _build_scanner = function() {
     })
 }
 
+const _lint = async function(d) {
+    const url = "https://consensas.world/tools/lint"
+    const response = await fetch(url, {
+        body: JSON.stringify(d),
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+            "accept": "application/json",
+        },
+    })
+    const json = await response.json();
+    if (json && json.lints) {
+    }
+
+    const ul = $("#lints ul")
+    ul.empty()
+
+    for (let d of json.lints) {
+        if (d.id) {
+            ul.append($("<li>").text(d.id + ": " + d.issue))
+        } else {
+            ul.append($("<li>").text(d.issue))
+        }
+    }
+
+    $("#lints").show()
+}
+
 $(document).ready(function() {
     $("#verified-close").on("click", function() {
         $("#verified").hide()
     })
 
     /*
-     *  Form
+     *  Verifier Form
      */
     $("#verifier").on("submit", async function(e) {
         e.preventDefault()
@@ -166,6 +197,23 @@ $(document).ready(function() {
         } catch (error) {
             console.log("#", error)
         }
+    })
+
+    /**
+     *  Lint Form
+     */
+    $("#lint").on("submit", async function(e) {
+        e.preventDefault()
+
+        const json$ = $("#lint textarea").val().trim()
+        try {
+            _lint(JSON.parse(json$))
+        } catch (error) {
+            console.log("#", error)
+            alert("" + error)
+        }
+
+        console.log(json$)
     })
 
     /**

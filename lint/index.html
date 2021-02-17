@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="../validate/main.js"></script>
+    <title>Consensas Vaccination Information Passport Scanner</title>
+    <style>
+#lint textarea {
+    width: 100%;
+    height: 400px;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 10px;
+}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <a href="/"><img src="https://consensas-aws.s3.amazonaws.com/icons/passports-github.png" align="right" /></a>
+
+        <h1>Verified Credential Lint</h1>
+        <p>
+        Make sure you have a context that doesn't require referencing URI!
+        </p>
+
+        <section class="sh2">
+            <form id="lint">
+                <div class="form-group col-sm-8">
+                    <textarea>
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "security": "https://w3id.org/security#",
+    "vc": "https://www.w3.org/2018/credentials/v1/"
+  },
+  "@type": [
+    "vc:VerifiableCredential",
+    "vc:HealthCredential"
+  ],
+  "vc:issuer": "https://passport.consensas.com",
+  "vc:issuanceDate": "2021-02-16T21:07:54.907Z",
+  "vc:credentialSubject": {
+    "@type": "schema:ImmunizationRecord",
+    "schema:name": "Ian Ritter - Moderna COVID-19 Vaccine",
+    "schema:patient": {
+      "@type": "schema:Patient",
+      "schema:name": "Ian Ritter",
+      "schema:birthDate": "••••-••-08",
+      "schema:familyName": "Ritter",
+      "schema:givenName": "Ian",
+      "schema:healthCard": {
+        "@type": "schema:HealthCard",
+        "schema:identifier": "••••••••••••4564",
+        "schema:issuedBy": "CA-BC",
+        "schema:validUntil": "2023-12"
+      }
+    },
+    "schema:primaryPrevention": {
+      "@type": "schema:ImmunizationRecommendation",
+      "schema:drug": {
+        "@type": "schema:Drug",
+        "schema:code": {
+          "@type": "schema:MedicalCode",
+          "schema:codeValue": "207",
+          "schema:codingSystem": "CVX"
+        },
+        "schema:manufacturer": {
+          "@type": "schema:Organization",
+          "schema:identifier": "MOD",
+          "schema:name": "Moderna US, Inc."
+        },
+        "schema:name": "Moderna COVID-19 Vaccine"
+      },
+      "schema:healthCondition": {
+        "@type": "schema:MedicalCondition",
+        "schema:code": {
+          "@type": "schema:MedicalCode",
+          "schema:codeValue": "U07",
+          "schema:codingSystem": "ICD-10"
+        },
+        "schema:name": "COVID-19"
+      },
+      "schema:name": "Moderna COVID-19 Vaccine"
+    },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
+    "schema:location": {
+      "@type": "schema:Hospital",
+      "schema:address": {
+        "@type": "schema:PostalAddress",
+        "schema:addressCountry": "CA",
+        "schema:addressRegion": "BC",
+        "schema:addressLocality": "New Reginald"
+      },
+      "schema:name": "General Hosptial"
+    },
+    "vc:id": "did:example:QGEKMLKXIV"
+  },
+  "security:proof": {
+    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
+    "security:proofPurpose": "assertionMethod",
+    "security:created": "2021-02-16T21:07:54.922Z",
+    "security:nonce": "5245977491315841",
+    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
+    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..PNxramCU4-P4pQ1AYG0P2RQf56j161asRCRRSDjs4X9KYRS8SYB1UFGqRMPkrexjR83znnI-xaz3QGItsE9Vu0e07vvxqlPBfbNWcZOwdgnm_62UJB-wPA17AyoNPwvLV1fyzpndXCw7U28v1HaVl7_eK9T72J7-Nxfr_-a2xNzgAjY1D32FA6u1lQ8nmQotIfNIJSUEyWJbaIzi1R3F-kZmB-w5EBrkM77JJ_vz8QOLMa-gWO1nxo6YRtyUyoiiOworbxM5jt379JFZKxlMdL_KxY5BsQ0augh3Ru51xYAbpcb8-7V-kiplePdc8qPP4pyWxDWiaReaMZqwM6QHaw"
+  }
+}
+                    </textarea>
+                </div>
+                <div class="form-group" style="margin-top: -8px">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Check</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section id="lints">
+            <ul></ul>
+        </section>
+    </div>
+</body>
+</html>

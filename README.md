@@ -24,3 +24,10 @@ digital proof a some test having been performed.
 * use the files in `cfg` to set up your webserver
 * edit `validate/main.js` and change the URL `DID_EXAMPLE` points to 
   to the domain / url you are using. Sorry, this is horrible.
+
+## Building
+
+    npm run build
+
+The output code is in `dist`
+~
