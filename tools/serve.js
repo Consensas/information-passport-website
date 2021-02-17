@@ -28,7 +28,7 @@ const path = require("path")
 
 const app = express();
 
-const FOLDER = "validate"
+const FOLDER = "../validate"
 
 app.get("/", async (request, response) => {
     const document = await fs.promises.readFile(
