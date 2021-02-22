@@ -82,7 +82,7 @@ const validate = async url => {
         })
         const json = await response.json();
         const verified = await ip.crypto.verify(json, {
-            fetch_chain: async proof => {
+            fetchProof: async proof => {
                 console.log("-", "fetch verification", proof.verificationMethod)
                 const vresponse = await fetch(proof.verificationMethod)
                 const vtext = await vresponse.text()
@@ -93,7 +93,7 @@ const validate = async url => {
 
         // hack - should be just "vc:credentialSubject"
         console.log("-", "display verified", verified)
-        const fd = flatten(verified.claim || {})
+        const fd = flatten(verified.credentialSubject || {})
         const dl = $("dl")
         dl.empty()
 
