@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:32.446Z",
+  "vc:issuanceDate": "2021-02-22T10:22:51.803Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Jon Burke - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Hosptial"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:KAHMYJJSPW"
+    "vc:id": "did:example:KAHMYJJSPW"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:32.449Z",
-    "security:nonce": "007483392937121858",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..sFphYAVllBdss2yNgJkyplcCC3U8oBRjKLcd3tgAiom1zykzpEQ8nwmtuM4Bed3ligbn_UbIp_9K0eV2e9X0o7hpV4gWhVAFKuLuYk00T34EhDv6StniKN58aZlX9L4qy0DVGeJj6tzyzMoif6_76YrxRa_OtCGFOhC94lRLVeicbprqmykYslugflAJGc11NAVCnDxHWvVd2RLPrYtPCGpU1R727yC2fvfORkJlwQF-AQ57vIjK8sH5o9bSnQB9NEgyOj0EVG_9lqtLThxOdy-ZhJaL4KejnJX6yTqvn2R-9Hr1C7d0erwlYi6mpVbexoSqgX8TAeEKNjNpvRteWA"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:22:51Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..BA9qgdqnKQ4S_pKauxRg1dcoR_zEzRyPBMXnLvpyI0qRNiMoNLaO32YticeWE7ZtmzXiWL5gr6ELc4uWJfK2D6tZMe-QKyI6j5606pcN_Jk8lmPqER5LhyMJKEpSy9astOZ1oIx4PLTd1t8RjTphNO6PTpvxghVF7614zwgtEy0c0R5huSNqfxOzOxCtqTMC8STtFuBkYwTj5YWMC99w6WN0H8f6q66aVC_eIhJio70jAQx-MnSMEhmlqgzkhEaS-q7GopmF3WrKW1JLANIPbqGP9wj6ZD0wPmCIpG_ngAgPXGzGPBfSP-2P3Q9dHFfBBGHuXb0sSQdRuUsxwLhwQw",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

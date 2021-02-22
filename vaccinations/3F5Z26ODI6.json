@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:52.579Z",
+  "vc:issuanceDate": "2021-02-22T10:23:13.717Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Laurie Parker - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "Shopper's"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:3F5Z26ODI6"
+    "vc:id": "did:example:3F5Z26ODI6"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:52.581Z",
-    "security:nonce": "43273057627416334",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..qSCmh3EueT-V5JTeMO1CP_hf5BanEvI-Rg-4AyEKu31KWiVFLn43zYg3moWDXSbjifjiiOZclNtprz3PQ2KPv4GDhUqXTxvdfc5d2WWum2qBAv9Cifvqg3FfHswc5h9zxngAnPa5Ids9_vKEVse6qQVdlLA-yhj88CzjbzRzgA0evjoDCGu7esmo7S3IRxpD3ItsZb3IIqhHlQyzxKuuryLC4YxueLsufo4iGJnRml9dsvxwMAurjaF48UBZ-5S1bOnKmcorvIhte1DdJA9MR8Pe9tNXBik6kjG6txgRSTxZPzX3XCJx-cLu2eoRyRf0MWHU7JEtc41iPtdNqQbKsA"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:13Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..W-xDKLlx89jCMKKONU9Ggvbl8CcC6BirN7a-bf9FMuFC6gu3TTQfQ6O1TIvaXJ46nEP0Bzv6f3R3ieMwwbPupi-Z7lr1-wD-SuDHI1GW5EYJXNWAWsO1hKn6qNFmJ_FWU047EKkYhvx7TqnPPxiApNzYGaCHRyCLsvTVx4P8w0iqh1Rcs5nZGodsTJ3DchssU2sLDIVy5KZ-O00YBS3aSZWEok62tEC30mnNurNG49zpT3Eu2KQGdmSCB9VIDQndceEOXs0xIdHowi1zlG4FECvMz0A8mNlmfXmrhZN_reKTUodTbprC235cUqDholNbOAeA-1EiRAUy14_A8_0apA",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

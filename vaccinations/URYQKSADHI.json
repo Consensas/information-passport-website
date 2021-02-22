@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:42.495Z",
+  "vc:issuanceDate": "2021-02-22T10:23:02.869Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Sergio Mason - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "Rexall"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:URYQKSADHI"
+    "vc:id": "did:example:URYQKSADHI"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:42.498Z",
-    "security:nonce": "925819629730372",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..06kGd63idkz1cuoR9V9Cl54jqguH4Ys60GaephD1W4ktJ_Wjoz6Nn2wi8-ingzLHbOZVo5flNRSsUJSbAHPiYiA4tCYg6-KU9Xj2Dm1sMJjNemw55Hag4BvCc2dO3uxQ2po452yyz-p7_OJiSpufSY4K0MjlJ4g4Vm9kEpNCkr2jho93pnS-29VR0Bbg7-JO4FOjWmptE_5xJ4__GLkfPOpBAEoPVxQoMtZ4goA1LBIJnttJReMMEH0-ea8BDSzrhos8Q8BuY57TWeP4iUPlvl0FPksgP3oUCVjMStqIXkY5sjj_qBe6lWpih_T0xeNLNcI1Ez9DVZTVRAnHvBr0yw"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:02Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..gSE51fhxp5gezAaPZObzEeCZzGT5zH0nVvog3NziWkH_SvBFx4acHbFOnFzTyt5zkvXJyrXz1A9NVs4uottouhMzCrvrRq6CcP-g4EKNgT2ninaqTSrGVP8yW2tBib1ArrLRwutdbV7Zx8dhTNNy0fp2ShdZAG1M3jkW1lCnZOQaWXHZ-UgMoBdOaWK8Arp7skZNiKStEDerNgyP9vHQn20Vsx6NAXVR0naLwuKM_71vUuddNAfxy2iqFuq1k8vW1k5V9aU0BA93lvL-dii1bKUcziDjNBEAqlv21wBN_xb7qDXVo1HMRhDOM_fSvrng_-qMlMG5rHvFI1iFR41XNg",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

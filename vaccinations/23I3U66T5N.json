@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:57.369Z",
+  "vc:issuanceDate": "2021-02-22T10:23:19.097Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Zachary Hunter - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Hosptial"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:23I3U66T5N"
+    "vc:id": "did:example:23I3U66T5N"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:57.371Z",
-    "security:nonce": "6390239350068592",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..p_wKUrSlQwi1OZId5_o4T04KZ5CnV2IFMzu6V4IwCM1U9jqfmvvwYkJCRh1oxVLUh4grFLrU3bw4XdiDSonGz6ctdddEMKICTn9I61W2vjWCQarxXpN4mlz6IRJmXoqaGR1Swh-pV3ERl1V-5WnO0ax-Li2LqEHbQ3DGkndkv_RRGFHDqVydS0b87Wtbscbpi7zKdfi8Nntj9SKZnXVpG3vPCrBHT29vot_SSkvovxJfciewk8HY3Gm4_HZmD38qEG8Z4bSho5RJgPQbq8TNsQfnjHVQmDKyF8fBrX4r1DqEFAEU_CPX6a_ax1vDvW5UgsgG4MxXqXt9LUKH5wjsXQ"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:19Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..nD8dv_8F74F-GNNYyEQxq8aK0yARMZO5jFaDVMeAastcEtErtigRLpEK5D0mGgaOmRy6B1t83IM50hRxl6BZKStsrjsGCNsrC9afuAyCMFZIkZ8nAWVnQnuugk1ENQs6X2fdEHnU_x9Wcx4pQOA46sXKSZb-CiY7fLV_GhTb5XFYKHsb2psl6RFRM-OIhqo8UMkGuon04-OgAQA6uFQzil52kkWHXvs8nzN_DYZwbDVnRmwLaW1eCwAYdIEFYuEKweEqCrLwSrCJ5VSy2Sa63zzHr87GtPHtkoWRXT-T6fcnRNFSmP58pkU50YCl-hSgR6DP5yq-zQ2b1VEzuxs0YQ",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

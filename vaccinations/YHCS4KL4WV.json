@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:54.427Z",
+  "vc:issuanceDate": "2021-02-22T10:23:15.782Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "John Keith - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "Shopper's"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:YHCS4KL4WV"
+    "vc:id": "did:example:YHCS4KL4WV"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:54.429Z",
-    "security:nonce": "25549149019755246",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..ClQyofEC2conJYTFpBoOedJVp5Xc6ZlCn8sCo3tZTActE1-Ud8yDWTEhWG6V4GtREoWMC8v5ll0SRNwKaJ00Yqrq6zXoM7kF3PwdmtDo2fDetWtPzxkNiTt0EeC89KxrrEh0pO0qkOzt1HvrcYB922mtsmpo4qHmogLV8z-iOYdAWKlxrop-hmOgMKa-ZvlLBUzV_FKECB67T8up9MoMT8BuRHKHAWrfNIw85XLTMUzL2CK5TlhLQY-8loMEul0KnrXvd_uRBhWlVo5kYvIVy9fefqtFJEc6kK7Fxy35KM7K9DJ0EhPu0KpnSrcys2zzcGPLqrnXV4ge_8b0YAvhYg"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:15Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..QapNNqd-jijzYC95U57wIYlCM3QyG1LhPgCjHyySPX1550xWR8lvqJU7AYcJ7BJMntMVhiqEq8inrvADls3UkOVdYgNZkh3Y4CY9iQ4SMS3L_EnE3DX9GRKZUe0IIH5zpsXlNN42hTHo5JGvAGgfsUTmofdqyy1T3G5EU26sRhRzSU4AHPD7ISQz6uxHsRa0zsmpm-AQgWgcvnpka-Zn2kwrpcVSezUbdd0l3diA0TSO3R8MZZx1qPBwf_p0OuHRStiJJki-m7JdQI5hNrRQCz6O0AgFtAp51bnpgeJi4SpfWiegN3RVzwpwOTgH8Go4sRv8TGsk8P5EShg0Kd31VQ",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

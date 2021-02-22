@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:35.180Z",
+  "vc:issuanceDate": "2021-02-22T10:22:54.800Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Susan Hinton - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Clinic"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:DXEEIMJ3KM"
+    "vc:id": "did:example:DXEEIMJ3KM"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:35.182Z",
-    "security:nonce": "16003252929102119",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..QckyAJ4G-QrlOAu_lwMcujZYo3-VueUuKFzr6Rd1-pkF5KdxnNl-OQJ7HI0j5Xzh0jXBCB1PB8JbOAqJDkNRvMy17_ctqARX4oCAiA3g1wUT94tQt6pIi0wj9Pe1EJq5_HDmgVyA4Te_X1tfr79H-r5bfX3X5Yvi2cydxchkDlhaym5Qcg5Nog6C3IDDg0WWwwNbpRpy3z7hD7ZqbIf32eFNeOVFFxfQKt2Rk-T8oZ1_y9bmt9LnJC0EAExvqLaDdJpAQmLw4H8FWQpWoN54In-Hz6vsKtL9uvA9DkEMH52BwmvL_DvB--dwiwTvJUIJUq_o5eZBlSHEhycTrXj3dQ"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:22:54Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..A0cFRFFy8tCchnoO5v5Fq2xruWjNIKDseX8WwExniVkDCZfbZ8BC8pd_eDyPZNZHkR45k5VrW9PV61rg0pa4ZuoQ7qJwJmFMzidPAJ9ZPrwvNCYD4CD0YddGq_tCvrZZogOKcyko7y463GOoeibYPSKe2Bqn6OiL82FMAqjDWyt98Z1bcsANRCPPVAeMxxoUpEfbb0RMWBplVcu6wEuPgFoLvm_tA_dMcNXcUi_wiZrMuBUJBo1PbhxCem9c0mwlElfWuBFybEdw0cwL9J0bSLUPAL_nrOjYxO2Reyh8Jl7iDQAmt6jE125ss72ZUJAH_kabO_f8Mr3EYE2acfnEtg",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

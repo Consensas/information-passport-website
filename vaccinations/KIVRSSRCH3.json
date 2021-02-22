@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:30.836Z",
+  "vc:issuanceDate": "2021-02-22T10:22:49.996Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Taylor Coffey - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Clinic"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:KIVRSSRCH3"
+    "vc:id": "did:example:KIVRSSRCH3"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:30.838Z",
-    "security:nonce": "6486215412022673",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..xmSjWpd_6LHXcUEuVitvUQpeiHtOe_YbCfH8UIGi1RSFEhBpUJkoYdCQ1AzYSothlOSiLcudxqk3crG1Vqr5ercn9wzbI-oJ5FOGGNV5n06is1JvXddLqteyjIKkruCvW_GQSLYeBrl0ToTqXVguCkk0JzOGVQAlJRcJdHk5H9esgT0Fm07nLTRuChqLOBzd3l1onPhXcnlf8hqDSjIDQ8x-OJDJibOt4_svrInt-Br-zi-jaHJ1QJgEJifj_NagKzwNoKOJx9ZH5wwqBs26A_Ec3xrsOuPnf3Ra9_BW73cmPaCxjfUmYVyw72BcjHmetgUSVvXkIGsYMCAsWhY0iQ"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:22:49Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..L7xEZofMvPrHfz5yo43KpMuaLf5JyYcBx28Ubn-wFH_LSpLhR9aWHIXE-BSk7zGbPiWUGG_-sqtHv1okvdKmPZI19Ecm2U1v9ppVs0DN1GD99zk9hLAmbP86ZvfWt3Qjf0pUDi3Syc1efj6I9D6sIUML7skmU5rBF_nkJ1B0QIdDghNnqjy4GVkP2LJFUDuKrhtQ6eI4TuI8O5AGediRkSupHqU3cJIY2mQwdpqEJJjw0nhB5Bt6_Nxj9unI_plAq6La6sHNacaet8R-V1xvlHrzARoj0JCEdP7o-EOt0SQ6GtLNksGf-rKswn62N4Dm_vMkm2DczB2bxXaHRY3zmQ",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

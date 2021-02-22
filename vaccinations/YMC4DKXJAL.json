@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:51.759Z",
+  "vc:issuanceDate": "2021-02-22T10:23:12.799Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Natasha Kelly - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "Rexall"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:YMC4DKXJAL"
+    "vc:id": "did:example:YMC4DKXJAL"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:51.761Z",
-    "security:nonce": "7988972285150366",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..uNnwAemVTK2-6z8kdPjG0CeP6iT1_YNLxXlLMShi0t4ZSohfL2-t946OPZhn535fUmWrIQWSJfCcK92f5UPyIXUioRZhyZbk5tF_Aedx6N4L-dEbs_ONZ6f4aSmu5EKsyRNJ5j9cp95ET9SsSPZcvHMsa459q0PCSUIAz1Kz3o5bLuYOTjX74EM6iIAMqT-UK2nmh0xn5D-tzEX-EdclA-8x9hnR_FE3fQgP9M2WaXXeNEiFxyjNkzloAFr0MIMxRb84HmGCOhowwH7U5fDtKzi8KiyxfqiSjln2pcdmSL-dFwRsrmpTBEqTdg7H4r9MSWhZ1TP5Pb8ebCXtIAzODw"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:12Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..EGvw1XyLRYsAqTOLhHMduCZqtd0jbhqsyvWikVcyQQaBn-aQZf2iST5Fybl0vayoQrslVuaS71jtsyNvUs_t6_fF_Ue64tfZ5YHzDi-C5mW2rSQjMw_aNUJKWmBmx3G4LADQqxsnVQhIjL5RnqfkH9u4gx0pHN6HU67d0HVgBKpGepV7ZBVV3fIqX_QNhHByzKrVEOtPYPJHI_BFprMSyroxbarB5UvfkQ2wujpspi9JOErZSN8EdI0Mx4sZ_8n1hgIWqcu2vbUkPAE77-iD_GSb7VRr_WQsb_DZSCH_pAUw2JS78HTtxJ2HAsgpw2PJNPrq9UuJIROMV5nARTUFeA",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

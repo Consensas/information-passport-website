@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:53.859Z",
+  "vc:issuanceDate": "2021-02-22T10:23:15.128Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Jessica Mercer - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "Dr. Elric Clinc"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:TVARENQ6Y3"
+    "vc:id": "did:example:TVARENQ6Y3"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:53.861Z",
-    "security:nonce": "6721395806442969",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..z3hdzO5JuvVS9-1x_g31MLvFDkAxEdHlnB8aOep-oxfHEXc43N50L58dFji-CU6wqqZeBsDI6a4kRV3aZwH0Bsj3u2gB-Hc5FdTYLXyBkWpVywpFxWuSk9002ZzUDSvfbv3nAY43pKpLfQjmUPhcYKYmZrx6deNUsKzi4erO5UXZp6cvE7e9GFPx03z86K0MdUEZdclihyt5IIfWWinejp3oVwh3Wrvlb52HHwWUzs11Ife8VHAoPZMm0Nkcc-tP-QGZK2IqVNyOLSH-pqMxsHbXxF0r7PMf04AWeXCdrMtJzmzRpaezEGKpsKYXf9RR5tGpHwnlCPJkt8_-FpXSrw"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:15Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..k3S7SlXmZnoVtFo2krNcZlAcsmqtK0n76MDgL79Vb0Xjhx59BARwO15tKOoypvJ1-c18mb6AQgsgLYamJiEXJLv9CeXQQyQzQfY3ckLzO0h3ofRG3UJTw5RgQ_sEoR_qQ2YA4Xi6sHhR3oNQKgl61eE4M8Uxtfsr4qpoSOxtba3ab6V6VajT13cGOBbfdzXTkmjAsghoIWLuZTFsNyYKcXAeNxmHs_SMvjsfJom8sBgHZIl7TzbKleSgs5amkWRzVPcuOSlrkNrwHIqvI1CXe2b5_91JiNWBXXUaInNLj8UuRs6TUEpXfueEmmHUCB32nSd_UgNeqeyL61wllknTcw",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

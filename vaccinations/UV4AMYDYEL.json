@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:43.711Z",
+  "vc:issuanceDate": "2021-02-22T10:23:04.144Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Brandon Chandler - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Clinic"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:UV4AMYDYEL"
+    "vc:id": "did:example:UV4AMYDYEL"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:43.713Z",
-    "security:nonce": "09221703599301612",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..WKwqNJCjhf_8txyVjKHJwAZJznJIiDEy3gGYNMmp5zSXqNWaxFpiInHHoN6D_kwwHxs4fydSJvqZklItZqsx6ecAWfP1gHtAmJmMQASZcubtNum4PXdE2iFjxACiwHgGCnL2L-licRV6q_7kr6NQxGqcD8_3lh7O5X4EfUSqmFNsi3kwbUrvHmgzo9KmeseVqkkQvAE7fymKUw4jEAxxweZu7PsX_djBhZMTDfDzI0hjH2nMEvprQkJ6wtXxYvw7G5OZOAVRRRLEWJ0EAVLGmjYaHacBQ0xdEtz0Xwd6XVHg0s-B4flww7HUb6NE-PDZp-3SA3NlDa6lyIwjRaA29Q"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:04Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..sWZNCQbH5dgdhIMm1c6nw0sruUP8gcttmUjcC47r0YQh-avFH4yUpf74tzn_JPqDs_OfPCI2_8HJlkfXw3aAIPt4Z-3f507wqsIGMFIDrbWs0_GteG7w_ww6IWf_0Fuf5e_427E9di5PjoywUGxofgOl6k10DGq9UkPW0MS6wD7T544v1kFVCLzpxiTp3etbpAnxgLErGNzlKoFX7WNib1VFvAbxrxu6AjiQoAAc30c7WLa6HXqQSITbb_-LtU6bWXFLmylW2o2aPL9g__65pz2l17ACZb3YONuezOTEHA7bbKNNYgENzRLzVT5qLtCBH26jbYqeUH1WbZ3K6ySpKg",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

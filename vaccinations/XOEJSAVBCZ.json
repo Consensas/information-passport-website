@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:41.181Z",
+  "vc:issuanceDate": "2021-02-22T10:23:01.461Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Johnny Wilkinson - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "Shopper's"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:XOEJSAVBCZ"
+    "vc:id": "did:example:XOEJSAVBCZ"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:41.183Z",
-    "security:nonce": "511860795951226",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..uKrXq9TC59fvDg8dHXsfg3xsjAd9gyW1ub0J7ZpmZ0EEw4u8IdACbbzogg1VmpmMjqcqFjBuSQRja07dURu4CaJiDNDrAVp8WBSBj8qWUVquzDUjDComT8nQ-JsD9ISAwzVkxW7pmOLhj1p_HtCTiwRl08iOfhWfGqKBxhkHxKuxXqJJmwYTHkRMa9C2W07dT-G6bu64hppmTH622v2LXzeTHoW-eRnpxeeF90v3EGdoQcPE_Zb1ilfezrPLZZeelfUTbBogmdNvXpvqvOt7bOtFbPkJlotTUgN2v0qccM-wuMNqcfNzHHzev72uqMqMuExS38IBaNlQPDE6IkTmHw"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:01Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..8Yknz4dRgbHvesBaeChgYVhhnKeTiRCRaH-jYd-G1BwXdnbuKVOzbBfKQ7rwOiTkfROXj7xRTdUHhCTUpmxxIHK6pUhiYsgzQ1QFsb35DbO8wkEnMQ4DHoKoqo1PLWVhl8Jm6sl_zCqdcxdlWgsfGtGYSyXf1JE8rvzGkDvuOEVyhRN_SZkP3yAZTKWbw6KnHEUipJDj5ibNvNWKORrcsI1Njkx1HLCj6xjtufvppgePtjLGimWP4hSw3U1uZuBwEtJ8mEuIo0qvs5c2cy4v7E7eetwzBC1L_7Tj7QJxmC_PxPCZaAI7voFJQdHTSgeYup2NF3hWSXS1GUxKMe3YeQ",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

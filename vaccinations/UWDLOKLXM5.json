@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:44.982Z",
+  "vc:issuanceDate": "2021-02-22T10:23:05.456Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Sarah Taylor - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Hosptial"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:UWDLOKLXM5"
+    "vc:id": "did:example:UWDLOKLXM5"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:44.984Z",
-    "security:nonce": "4029135683124043",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..6V5mUv-M9dNiAi7sl1lLZ-Wxo06pLg8BKBlf1c-gOHuwQZaB8NY_xR05ONf0quhws9fEBvZT5MCUhx0Oz591_FKX2yQ9lBMaZO6yvGUt6roM1gDW3CIVp0EQM_Ktay2iND6k6wKOVAO-bEKLYQoFor50KhZZKwgiRWgpg5K01cYK81VtsyWzYBUN4qQU0VEYPF0YtA3jOHs8cYb4z864C6hmpZJjt078NsC79DTQKR4kDCR_MsM6-tlfUUtYkFmNB8ynEWMmFs8ZSnmL2-d53NG07bymUY0ytXLmjBLOGa1sSQU-twmNMSur2Obwtxco7SxtdcBgwbJtSECvwAiEsQ"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:05Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..yYfSUWXm3ojY2odx-xKYgW5i1srhqHvILXOKEE2yMqwK1WGGMLXgzI09qY1HsDbkXSTpWnbLsRNw7ZcQBjbSEus_1BiCVHKQc8ZKvyQ16OBJTw49aMaiO4ri__xMIdf0dynlHHHF09RY1fy8bsx99wa62gg9IbZgtDLl00_x8ZqopaG859oiBpBkULSQlupJuALx_l0ECn9kfik-3lyzs2r85oYdzUtLXn7v0iSqL9BxJ9jClilG3xvHV-zKxxSfgl7pdmaOme5UBYIQgs7n1qVjVPiHq69upx_KXzh94ctrsB7mwNOpPPnIJ7pcyY1PBLpwOMNKSxP0jQIhBdc06w",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

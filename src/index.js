@@ -92,8 +92,8 @@ const validate = async url => {
         })
 
         // hack - should be just "vc:credentialSubject"
-        console.log("-", "display verified")
-        const fd = flatten(verified.payload["vc:credentialSubject"] || verified.payload)
+        console.log("-", "display verified", verified)
+        const fd = flatten(verified.claim || {})
         const dl = $("dl")
         dl.empty()
 

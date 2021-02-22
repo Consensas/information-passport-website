@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:34.595Z",
+  "vc:issuanceDate": "2021-02-22T10:22:54.121Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Ryan Williams - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Hosptial"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:SLMEBPFIO2"
+    "vc:id": "did:example:SLMEBPFIO2"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:34.598Z",
-    "security:nonce": "25733647781286484",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..4gh6ePj9Oh7hWnjiMFop4GVeJBvTFQGAe8tii1w6G0Pxoc_FsD-lhUAFjoBu40RvknrYWyF9ThGbJUZ6IOcPS0Vzal7CVzYB1fEKWZ7kcVnKE-Lw_jwx5Ju_31fqWEqlIPp1JS4MubzosPlMMAiuLi1J_ypZw8RPhndnuoGhV41afJPP57XgPJWn0T72-A5aVUJeLyXPA7o2l7GyroZKyAFYdFDytHIsp1q18Mu_oPNupNoIsm5csidHznbQR6wrszo9o7zSOi-YS3Bhhrasj462FXfxwYvd9tgfa34vDEJob_pgB_tvpNd5hzca_SPPeXvdLLoouB0TEq9sxqmaLA"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:22:54Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fhx-rXI0a51S3rnPKF7pGUXY2Mi8k_I1TWBVwp5YoFAnZdkVG8XT-yrKtLk_M_5CBzaaKNm40Qb6UDPA_7yg4ANgMJ1_NgvAfIxff3gSb-8tmcYSKCwuQ3K-RSgT32dmcdq7Wmcx26hM1gX-_Ie2F7nY9NuZWhNHAmYBiR8-_xVPOvumKS-3meoag5TvSpEpN74s0ZY_vHyTBnaooLCcKLvPQfpqVUFD8e3Tt1SgstkauBWWEWBtve0QfRVv4uQ6ksuPMVtjoYdkjQJ-3-1BXE8kysp56UFkHMJRzk-fqCsXKbWDIeIL9xss8W0WWaobHibH1Ngc55uYXY8KbHXe-w",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

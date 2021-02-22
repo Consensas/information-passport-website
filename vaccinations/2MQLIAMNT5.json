@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:35.642Z",
+  "vc:issuanceDate": "2021-02-22T10:22:55.353Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Amanda Gregory - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Clinic"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:2MQLIAMNT5"
+    "vc:id": "did:example:2MQLIAMNT5"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:35.645Z",
-    "security:nonce": "09805224716262684",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..DShcYZsJNnDuawmsc68T3D2TSbn1WLrjsP7JayMjnjORZOmPJM41n9Iz2hC9ba8yL6uKjRvZWmLA8JvXlV95nQSPakFquDG5ttgDaMjiJqtCiXmBgVkvsDORD34lrbixi4NSfcbEaZO8GtHMjCNQXVWSJ5iv40DQKTQPpY3xOJZjT7qC0dIOQuv0eZT0Cgfq38HOg8mu0dUVlz02DOpODjWiPQvLGhc1XayLn19wilvwr1_pdepcurBGtfBNsOrU1eEwa4HSrtvk2go7rG8Ls7qu6Iwnw58nNhHJtbN5C9xKDzKyJHYU4XKiR54CB7dxzrN6lwxO20GOFSmcZ_syAQ"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:22:55Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..HsHpe1Mnnf-PEicJRorCUSZwIUjyo--R5gitJrh2jljTqHN0gKfCeCSGKQjnYZFt2hCxoEJy-1s8zt1HdhaPKzvOEt5dojVx9plsMs6GjAeLnKhy8oDkDFC_wuLTHUlj8G60QqviYK6zslN6CeVfOoffyWW_cyOenheFHJwo9ZNZzLfyoB1iGwDOq1t85RTrgmgXMP92bV6Rszz7z9NCr2DIOScoVV0S6ifUHzKB8CBeAOqmc7Xk4lwFRmwcxE3DRlCHn_37PCA5UL2fm7tuYAkVG4ruqxE90SoainZNkjlBXSjTkv9neNAA00myiYOq4TP_-E7OwHCFwGZZaoJgqA",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

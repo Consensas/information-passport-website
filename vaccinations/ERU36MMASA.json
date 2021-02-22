@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:39.367Z",
+  "vc:issuanceDate": "2021-02-22T10:22:59.459Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "William Berry - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Clinic"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:ERU36MMASA"
+    "vc:id": "did:example:ERU36MMASA"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:39.370Z",
-    "security:nonce": "1731253570842628",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..snZe9jc8vlaZZmHbNxUDbva10sRPH9OhfvVfY87Qpp4cDods9jqSGHf_4alzVrdOfEp5Fgf2fVSZli5F9HkpxQMvHs7cavRM-9CsDSw6cF52Wap74b6FOdWgdyYmg5XKRzW9yZQTXBUnsgGburVq7CsaV2vgYQnc77Q9ns-KMj-PktnKySluADcQbC7pmZKdzxuxMA6m1UcDNzEoMu0gM3N-EEQzFq2CZXaphwYmy8tph28pJo1s-3Hog1Z3YibYIY9qIGnu9QoFef7RDvZxqfmAxZJYfZ-fjtZlhSbhiGSSqbsczSvfT1JYB6eWme2d45MqzCEY7wIXecjat9QN4Q"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:22:59Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..VQzvCcNnlMM3mAzU1n7LBpjtQxvFanqXJ5vIrzN5ctCRxTpk9IbnrwxpZBRvm4wBjz194FYn7Hr6sl_e_pGzQIB3_fhP1VLKWoL4Le16YH7DS5HqRGUu8oMpqcCKHfZFmUTHpslEiREGJSVN6WnYrcZotFS8M_DwXyN1tcyDLRjOQsa44n2PUY7Q0GRiZFV1qFQAbgQExhbzv-F9wRPygk9rW9Di_fs-NblVen8mzXleBvNrIVWJ95fX-Ad-KGYGPl6tBwzB8QXiahACXY31VA5sCY430iYGvBYqMO11cxC7Cth7NPuOUDjgBVg3NUR79koUnRU_TJ9uZBUORZw8SA",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

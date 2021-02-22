@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:47.948Z",
+  "vc:issuanceDate": "2021-02-22T10:23:08.672Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Donna Robinson - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "Rexall"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:NTDWYQKAWR"
+    "vc:id": "did:example:NTDWYQKAWR"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:47.950Z",
-    "security:nonce": "5159397411206339",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..k1-eVkGNiZhvoJbZa9TQe-Gd-VBrDlvrhIF-MT8z9NgSE5nX6hkPYk_GZhzjA8gFFPiXX1N4XhiY6yZAp8E7GWTrS56onBLYUDTbkxQkHRWyIEabWG1Ot29zK2_BjfXmLPC3QZQZplgDk0Big_fq6UOteUJF9TteXUq5SE18mgGc0ohpvExZNwDb7PdawVGLxwMEhvNF40wn84jWTce8ER3aOoe5Xd_E-AGUHx-C2vshJ2ZN-hsEw_xrZIZm5lMZDOGLNtq41XgdeN_ErOlmZxkxZlqGhXpxhsL7AbV9uVPU3C5a7hFwmOVjJMX_nF60n7T55BIVScNxQNijZJnFww"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:08Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..aAMZNw-DK0S9j1Bu197vT6Kqz_ZaHxtBhEW31UqQy-WnALd0NmdVbCs_hMNN-2Dw081nW0Obe9wZ0G4mMxE57mBiA4GOoer7Sbcf0C4ZF7jJD5MWtLlf0Q4N8ygwJ_2dn_Lkpksbb1szwm3DvQ6GmmP0HqHNURSs8IIjQ6bJR_cdbQCp0TVNJMFPOUfu6rXjPxyasd6YklxEzp2tQZzBS6HH_22T-eFyUnykPmH9bbDQcS6FU7Ox5n0wl92MPNyqZl1iyH9DnP9lipGGl0_iRix3rUji1voT65q6p_GGZuVvU0Q5WrLAgmZgj8h31q0qeo-z5v1DGLfkyGMlcVPKoQ",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

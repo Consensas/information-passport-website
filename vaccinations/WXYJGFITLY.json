@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:57.578Z",
+  "vc:issuanceDate": "2021-02-22T10:23:19.334Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Marcus Byrd - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Clinic"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:WXYJGFITLY"
+    "vc:id": "did:example:WXYJGFITLY"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:57.580Z",
-    "security:nonce": "8178028222851044",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..MVHnub2NWq-GiyJ-9ErIZxtgf5HaKYBbVILk8FuEucZbhgZnKLUPSnOJvpZcYA5m_QAzV256mgkEUOnhvvHo8pqLltWX30kzH0uIzrmZ3h4SDCVo3CB_wPSa1-okF4vGjQbnAwaPT2Cr6t4EqE_09Cde49cHT6PmFdlM6usRiIg9OI_aY4PrcX3onhY53EUPG6RjXDMdM0e6uMhy9HO0kdoEn6W-QSBiE49E4CWrPAPLbZmUM50hy2CGrZVKOkcig3J_mGGfL6LOk2SEivefXtrJiPxNujeNBXMJWxo7uJn-YVziHi9I0yfo12_3POIXOr9nQmLC2KIqJjfnyKzdTw"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:19Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..DKRpXh37RhZ4LFVBoJKdKU88EdJuXWGGK9ukoovxY5mBvSmzQyKLnbufsG9U3DFk4U5wgcg5PTbyWOxv0ESSO_BmH-678z_3ALOu9IxZuo5AA6kpdE3e0t-YUUlU-irFXSLGX6oM8njP0sY5fGPJNNQwqoxXLuzsoHhDn8iSvM3jtFMP7cHfY7Rl6vU2tvazYzz5ZpvNx3-G2wsgGNjpVwudmRfYj6Y74wvUDL8szr31QLPEuW-eWtLk1Tbe088skrlX08JgwOFcjbXgVDeU-dLv3VWjE4g4LIff1cJug2vcbIgvTeFQKIJ8D84Rg7OOnVhCn1LZDOxF6KDYNfGzZA",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

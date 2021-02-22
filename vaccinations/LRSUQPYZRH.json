@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:56.357Z",
+  "vc:issuanceDate": "2021-02-22T10:23:17.980Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Bryan Scott - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Hosptial"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:LRSUQPYZRH"
+    "vc:id": "did:example:LRSUQPYZRH"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:56.359Z",
-    "security:nonce": "7471936973600783",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..Ljf8xcfGMsyx9x0V8iF8nQfSvYqzae0pYtik2gyT0naadMH5jaU5eb6RPGGO7MvZ4kXRsriWqVeoWl-I2Wyeg4lMFlnyszbR4AJsYIWL3Se7Zc0aaNVKH62KJThzSfIiVMFNmokl8KCKXPiWBqPqCc8-1zWh5glD_lAB3Adq-NCBjHVOUJDUVOjBKXrWM00N0E23DvQekwbjQWsx4lK3Yg1LDAZirZc5hC_u896GqawXEmXzlzmMjYBIKha0mFDPu-4xzmhWHSKtNtBLcrKxZ_kzL8VdbmhwXcx8A0ih3ueIE58IpXm9GZxYhVUsCHoi8szbXv-rZkqM4FgKw3OwUg"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:23:17Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fC6pciFHCAgHbxKR46fOHgIRTSgZNLEze_7hLQRQa9mLDLVpqpXDnzyFwPzTG1rmBXJUtraSVROKIK8wPAR0Jj_7WaLO_7bYmSY8XjOsv6Jl6fhsNqbbdUHvhbqpZJwzw4LhcjqXnzccFEMYVJhlZP0U2Xw_1vwyt_61rXXPIJDvPwkdQQEEmBiVX-ghlG2OJcH37b7f8farR8I3IB7kS5W6d0MjBG-12SK7C8sFF2PDb-s5xZaWDUaQp2OmN2BX9GgjM9WqIc-1PNUuzF0PLckNstqYzHw7lk2mO01rNK4NhQ6ATPCYS1VMAXNRYIeiAGpvLTnnJF9PYyghEYvisw",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }

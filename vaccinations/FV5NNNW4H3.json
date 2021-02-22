@@ -1,15 +1,18 @@
 {
-  "@context": {
-    "schema": "http://schema.org/",
-    "security": "https://w3id.org/security#",
-    "vc": "https://www.w3.org/2018/credentials/v1"
-  },
+  "@context": [
+    {
+      "schema": "http://schema.org/",
+      "security": "https://w3id.org/security#",
+      "vc": "https://www.w3.org/2018/credentials/v1/"
+    },
+    "https://w3id.org/security/v2"
+  ],
   "@type": [
     "vc:VerifiableCredential",
     "vc:HealthCredential"
   ],
   "vc:issuer": "https://passport.consensas.com",
-  "vc:issuanceDate": "2021-02-13T23:31:31.575Z",
+  "vc:issuanceDate": "2021-02-22T10:22:50.827Z",
   "vc:credentialSubject": {
     "@type": "schema:ImmunizationRecord",
     "schema:name": "Carl Carey - Moderna COVID-19 Vaccine",
@@ -27,7 +30,7 @@
       }
     },
     "schema:primaryPrevention": {
-      "@type": "ImmunizationRecommendation",
+      "@type": "schema:ImmunizationRecommendation",
       "schema:drug": {
         "@type": "schema:Drug",
         "schema:code": {
@@ -53,6 +56,9 @@
       },
       "schema:name": "Moderna COVID-19 Vaccine"
     },
+    "schema:immunizationDate": "2021-01-01",
+    "schema:doseSequence": 2,
+    "schema:lotNumber": "123-456-789",
     "schema:location": {
       "@type": "schema:Hospital",
       "schema:address": {
@@ -63,15 +69,13 @@
       },
       "schema:name": "General Clinic"
     },
-    "schema:treatmentDate": "2021-01-01",
-    "w3did:id": "did:example:FV5NNNW4H3"
+    "vc:id": "did:example:FV5NNNW4H3"
   },
-  "security:proof": {
-    "security:type": "https://cccc4.ca/vc#CanonicalRSA2021",
-    "security:proofPurpose": "assertionMethod",
-    "security:created": "2021-02-13T23:31:31.578Z",
-    "security:nonce": "21677787461989562",
-    "security:verificationMethod": "https://gist.githubusercontent.com/dpjanes/d2e3b972f56e73c8a85b7cc983c9114e/raw/6fe7f11e19478241e61fce8e36b2f2ba626a9fd0/public.cer.pem",
-    "security:jws": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im5nc1FzdFVmMDlmTDhwTnRxZHk5V1ctX3BUM0R4TGpLYlF5ZGItR0xPN2cifQ..rwTO67-KHtuo2qI1uJhjql2o7tQZXS4jPF8FmMG1psPVMBp72RiMSlqGHAIX50IXmWhTjNcorbtb9rJKBUgwLMdTLCbFT_FkGCWyXerZXI-JpuPC2oNh7ffQmB-FIEoUMHwElbFqestomlJwA4KMPyUV1rf4y0HuWAQTJIm2DzzFe09HM3WP9qR7XdAhcuwQnqtQnPid9qH90OAdQzr72XLwIirn3oCgp-s6uHBG7GJonE98bvpRodSwKTQuxPeIpBgJx4yJNZBEKneZHvzXSuJpLzH61x8BovQx2-zr4L9rliBahNCLtmAM-OeAMkf3cTkN3LlnEf6DFMvCqx4L7g"
+  "proof": {
+    "type": "RsaSignature2018",
+    "created": "2021-02-22T10:22:50Z",
+    "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..hzVVKMFjcmu_pH1XGfJvXjvbsCe8kzPqegDl2Rv5-HrHrYUx_QPmehN_cAW-WkPwGJpTYS9fzZG-8Zoyx434T0tORr_0dRUqzLGcEU_x99deA8wYxF4E1p0cXFBuL5RgX7QAmxMM0xofNK_OYsCYDnOnkYs137NJWpcpiRm2ft6ngPFmyJVlupeWzVVLtJww7GmPopYJCN-bmnAFWv45dq-CRjuDsZ5JoUtr9F0yIec6PBxOvCNxHRnPx1PfnDxQL_c6p-48qBQjuPEvxw44M34yQZKAWPjWfjGTivzQgMRm0HluMndwaSRZHLs-VexoeJ0xjsbjZdPHxGoz4XAlAw",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://gist.githubusercontent.com/dpjanes/74063bde4c668a7d9fc1ecd66268c069/raw/a633cfdc58311c4ff81aa40f0ef0026c7b183c4d/public.combined.pem"
   }
 }
