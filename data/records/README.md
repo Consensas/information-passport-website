@@ -9,3 +9,8 @@
 * https://passport.consensas.com/
 * https://passport.consensas.com/did:example:QQBI5UEJJY.json
 * https://consensas.world/did/did:cns:ABMM2DENRR.json
+
+## Mattr
+
+* https://github.com/mattrglobal/vaccination-certificate-vocab
+* https://github.com/mattrglobal/vaccination-certificate-vocab/blob/master/examples/vaccination-certificate-signed-ed25519.jsonld
